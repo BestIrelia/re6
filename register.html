@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <header>
+        <h1>生化危机6</h1>
+    </header>
+    <section class="overflow">
+        <aside class="lf overflow">
+            <h2>欢迎加入Resident Evil6</h2>
+            <div class="overflow" id="registerNav">
+                <a href="#registerByTel" class="lf active">手机注册</a>
+                <a href="#registerByEmail" class="lf">邮箱注册</a>
+            </div>
+            <form id="main">
+                <div id="registerByTel" class="show">
+                    <input type="tel" id="tel" placeholder="请输入手机号码" pattern="[0-9]{11}" required>
+                    <label for="tel" id="telTip"></label>
+                    <input type="password" id="telPwd" placeholder="请输入密码（6-20位数字与字母的组合）" pattern="(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}" required>
+                    <label for="telPwd" id="telPwdTip"></label>
+                    <input type="password" id="confirmTelPwd" placeholder="确认密码" required>
+                    <label for="confirmTelPwd" id="confirmTelPwdTip"></label>
+                    <div class="overflow">
+                        <input type="text" id="telCode" placeholder="输入验证码" class="telCode lf" required>
+                        <span class="getTelCode lf">获取验证码</span>
+                    </div>
+                    <label for="telCode" id="telCodeTip"></label>
+                </div>
+                <div id="registerByEmail" class="hide">
+                    <input type="email" id="email" placeholder="请输入邮箱账号" pattern="^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+" required>
+                    <label for="email" id="emailTip"></label>
+                    <input type="password" id="emailPwd" placeholder="请输入密码（6-20位数字与字母的组合）" pattern="(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}" required>
+                    <label for="emailPwd" id="emailPwdTip"></label>
+                    <input type="password" id="confirmEmailPwd" placeholder="确认密码" required>
+                    <label for="confirmEmailPwd" id="confirmEmailPwdTip"></label>
+                </div>
+            </form>
+            <div id="termsDiv">
+                <input type="radio" id="terms" checked>
+                <label for="terms" id="termsTip">同意服务条款</label>
+            </div>
+            <span id="register">注 册</span>
+            <p>
+                <span class="registerTip">有选项为输入或输入不正确</span>
+            </p>
+        </aside>
+        <div id="otherWay" class="lf">
+            <h2>其他登录方式</h2>
+            <a href="#" class="bg1">QQ账号登录</a>
+            <a href="#" class="bg2">微博账号登录</a>
+            <a href="#" class="bg3">微信账号登录</a>
+        </div>
+    </section>
+    <footer></footer>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+//        异步加载页尾
+        $(function(){
+            $('footer').load('data/footer.php');
+            //如果页面内容高度小于屏幕高度，div#footer将绝对定位到屏幕底部，否则div#footer保留它的正常静态定位
+            if ( $(document.body).height() < $(window).height()) {
+                $('footer').addClass('toFoot');
+            }
+        });
+//        选择注册方式
+        $('#registerNav').on('click','a',function (e) {
+            e.preventDefault();
+            $(this).addClass('active').siblings('a').removeClass('active');
+            var div=$(this).attr('href');
+            $(div).show().siblings().hide();
+        });
+//        表单验证
+//        手机注册验证
+        var correctTel=false;
+        var correctTelPwd=false;
+        var correctConfirmTelPwd=false;
+        var correctTelCode=false;
+//        邮箱验证
+        var correctEmail=false;
+        var correctEmailPwd=false;
+        var correctConfirmEmailPwd=false;
+        $('#tel').blur(function () {
+//            console.log(this);//this指向DOM对象
+            if(this.validity.valid){
+                $('#telTip').html('');
+                correctTel=true;
+            }else if(this.validity.valueMissing){
+                $('#telTip').html('手机号不能为空');
+            }else if(this.validity.patternMismatch){
+                $('#telTip').html('手机号输入有误');
+            }
+        });
+        $('#telPwd').blur(function () {
+            if(this.validity.valid){
+                $('#telPwdTip').html('');
+                correctTelPwd=true;
+            }else if(this.validity.valueMissing){
+                $('#telPwdTip').html('密码不能为空');
+            }else if(this.validity.patternMismatch){
+                $('#telPwdTip').html('密码输入格式有误');
+            }
+        });
+        $('#confirmTelPwd').blur(function () {
+            if(this.validity.valid){
+                if(this.value==$('#telPwd')[0].value){
+                    $('#confirmTelPwdTip').html('');
+                    correctConfirmTelPwd=true;
+                }else{
+                    $('#confirmTelPwdTip').html('前后密码不一致');
+                }
+            }else if(this.validity.valueMissing){
+                $('#confirmTelPwdTip').html('密码不能为空');
+            }
+        });
+        $('#telCode').blur(function () {
+            if(this.validity.valid){
+                if(this.value=='aaa'){
+                    $('#confirmTelPwdTip').html('');
+                    correctTelCode=true;
+                }
+            }else if(this.validity.valueMissing){
+                $('#confirmTelPwdTip').html('密码不能为空');
+            }
+        });
+        $('#email').blur(function () {
+//            console.log(this);//this指向DOM对象
+            if(this.validity.valid){
+                $('#emailTip').html('');
+                correctEmail=true;
+            }else if(this.validity.valueMissing){
+                $('#EmailTip').html('邮箱账号不能为空');
+            }else if(this.validity.patternMismatch){
+                $('#emailTip').html('邮箱账号输入有误');
+            }
+        });
+        $('#emailPwd').blur(function () {
+            if(this.validity.valid){
+                $('#emailPwdTip').html('');
+                correctEmailPwd=true;
+            }else if(this.validity.valueMissing){
+                $('#emailPwdTip').html('密码不能为空');
+            }else if(this.validity.patternMismatch){
+                $('#emailPwdTip').html('密码输入格式有误');
+            }
+        });
+        $('#confirmEmailPwd').blur(function () {
+            if(this.validity.valid){
+                if(this.value==$('#emailPwd')[0].value){
+                    $('#confirmEmailPwdTip').html('');
+                    correctConfirmEmailPwd=true;
+                }else{
+                    $('#confirmEmailPwdTip').html('前后密码不一致');
+                }
+            }else if(this.validity.valueMissing){
+                $('#confirmEmailPwdTip').html('密码不能为空');
+            }
+        });
+//        点击注册
+        $('#register').click(function () {
+            if((correctTel && correctTelPwd && correctConfirmTelPwd && correctTelCode)||(correctEmail && correctEmailPwd && correctConfirmEmailPwd)){
+                $('p').hide();
+                console.log('可以提交')
+            }else{
+                $('p').show();
+            }
+        })
+    </script>
+</body>
+</html>

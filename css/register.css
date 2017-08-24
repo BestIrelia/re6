@@ -1,0 +1,147 @@
+/*公共样式*/
+header,section{
+    width:1000px;
+    margin:0 auto;
+}
+body{
+    background:#000 url(../img/bg.jpg) center -220px no-repeat;
+}
+/*头部标题*/
+header h1{
+    padding:30px;
+    font-size: 40px;
+    color: #E23703;
+}
+/*页面主体*/
+section{
+    padding:40px 0 40px 0;
+    margin-bottom: 100px;
+    background-color: #fff;
+}
+aside{
+    padding: 0 60px 0 60px;
+    width: 579px;
+    border-right:1px solid #ddd;
+}
+aside h2,#otherWay h2{
+    margin-bottom: 20px;
+    font-size: 25px;
+    text-align: center;
+}
+#registerNav a{
+    width: 289px;
+    line-height: 38px;
+    font-size: 20px;
+    text-align: center;
+    border-top: 5px solid #ddd;
+}
+#registerNav .active{
+    color: #e23703;
+    border-top: 5px solid #e23703;
+    background: url(http://image.gamersky.com/webimg13/user/tx-nav.png) center -4px no-repeat;
+}
+#registerNav a:hover{
+    color: #e23703;
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
+#main input{
+    margin: 15px 0 5px 0;
+    padding:15px;
+    width:547px;
+    border:1px solid #ddd;
+}
+#main label{
+    display: block;
+    margin-left: 5px;
+    height:20px;
+    color: #e23703;
+}
+#main input.telCode{
+    width:400px;
+}
+#main span.getTelCode{
+    padding:13px;
+    margin-top:15px;
+    width:119px;
+    text-align: center;
+    border:1px solid #ddd;
+    border-left: 0;
+    background-color: #f7f7f7;
+}
+#main span.getTelCode:hover{
+    cursor: pointer;
+}
+#termsDiv{
+    margin-top: 5px;
+}
+input#terms{
+    width: 20px;
+}
+#register{
+    display: block;
+    padding:15px;
+    margin:15px 0 10px 150px;
+    width:300px;
+    border:0;
+    color: #fff;
+    text-align: center;
+    background-color: #e23703;
+}
+#register:hover{
+    cursor: pointer;
+    background: #ff5400;
+}
+p{
+    text-align: center;
+    color: #e23703;
+    display: none;
+}
+#otherWay{
+    width:300px;
+}
+#otherWay a{
+    display: block;
+    margin: 0 0 10px 35px;
+    padding-left: 74px;
+    width: 135px;
+    height: 48px;
+    line-height: 48px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+}
+#otherWay a:hover{
+    color: #e23703;
+}
+.bg1{
+    background: url(../img/user/dlfs.png) 35px -48px no-repeat;
+}
+.bg2{
+    background: url(../img/user/dlfs.png) 35px 0 no-repeat;
+}
+.bg3{
+    background: url(../img/user/dlfs.png) 35px -96px no-repeat;
+}
+/*网页底部*/
+#foot{
+    padding:25px 0;
+    color:#777;
+    text-align:center;
+    background:#393939;
+}
+.toFoot{
+    position: absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+}
+#foot a{
+    color:#777;
+}
+#foot a:hover{
+    color:#fff;
+}

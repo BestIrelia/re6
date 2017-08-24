@@ -1,0 +1,526 @@
+/*************************************************调试***********************************************************/
+/*#main,#foot{*/
+	/*border:1px solid #ddd;*/
+/*}*/
+/************************************************页面公共样式*****************************************************/
+#nav,#main,#foot{
+	margin:0 auto;
+	width:1000px;
+	background:#fff;
+}
+body{
+	background:#000 url(../img/bg.jpg) center -220px no-repeat;
+}
+/***********************************************页面顶部***********************************************************/
+header{
+	background:#222;
+}
+#top{
+	margin:0 auto;
+	width:1000px;
+	height:36px;
+	line-height:36px;
+}
+#top>ul>li{
+	position:relative;
+	float:left;
+	padding:0 10px;
+}
+#top li a{
+	color:#c5c5c5;
+}
+#top li a:hover{
+	color:#ff5400;
+}
+#top li i{
+	float:left;
+	margin:10px 20px 0 0;
+	height:16px;
+	border-right:1px solid #c5c5c5;
+}
+#top li.sub div{
+	position:absolute;
+	left:-10px;
+	padding:0 5px;
+	width:86px;
+	text-align:center;
+	background:#222;
+	display:none;
+}
+#top li.sub:hover{
+	cursor:pointer;
+}
+#top li.sub:hover>a{
+	color:#ff5400;
+}
+#top li.sub:hover div{
+	display:block;
+}
+#top li a.user{
+	padding-left:30px;
+	background:url(../img/user/icon.png) 0 -72px no-repeat;
+}
+#top li a.user:hover{
+	background:url(../img/user/rt.png) no-repeat;
+}
+/*页面顶部轮播海报*/
+#slider{
+	margin:0 auto;
+	width:1000px;
+	height:300px;
+	position:relative;
+}
+#imgs{
+	position:absolute;
+	top: 0;
+	left: 0;
+}
+#imgs li{
+	float: left;
+}
+/*导航栏*/
+#nav{
+	background:#723eac;
+	overflow:hidden;
+}
+#nav li{
+	float:left;
+	width:96px;
+	height:54px;
+	line-height:54px;
+}
+#nav li:hover{
+	background:#66379A;
+}
+#nav li a{
+	padding:15px 30px;
+	font-size:18px;
+	font-weight:bold;
+	color:#fff;
+}
+#nav i{
+	float:right;
+	margin:15px 30px 15px 0;
+	width:20px;
+	height:25px;
+	background:#fff url(../img/icon2.png) 0 -222px no-repeat;
+	cursor:pointer;
+}
+#nav input{
+	float:right;
+	margin:15px 0 15px 30px;
+	padding:5px;
+	width:180px;
+	font-style:italic;
+	color:#666;
+}
+#nav input.search{
+	font-style:normal;
+	color:#000;
+}
+/*网页主体*/
+#main{
+	overflow:hidden;
+}
+	/*网页主体左侧资讯*/
+#left{
+	float:left;
+	margin:15px;
+	width:655px;
+}
+		/*共同样式*/
+#left .titleBg{
+	float:left;
+	width:10px;
+	height:42px;
+	background:#723eac;
+}
+#left .title{
+	float:left;
+	padding-left:10px;
+	width:635px;
+	height:40px;
+	line-height:40px;
+	border-top:2px solid #ddd;  
+	background:#F2F2F3;
+	color:#000;
+}
+#news{
+	margin-bottom:15px;
+}
+		/*精彩资讯*/
+#news div.choise{
+	padding:10px 30px;
+	color:#000;
+}
+#news div.choise h4{
+	float:left;
+	margin-right:445px;
+}
+#news div.choise a{
+	float:left;
+	width:19px;
+	height:19px;
+	border:1px solid #ddd;
+	text-align:center;
+}
+#news div.choise a.cur{
+	color:#fff;
+	background:#666;
+}
+#news dl{
+	float:left;
+	margin:0 10px 10px 10px;
+	width:190px;
+	text-align:center;
+}
+#news dl img{
+	width:140px;
+	height:88px;
+}
+#news dl:hover{
+	cursor:pointer;
+}
+#news dl:hover a{
+	color:#723eac;
+}
+#news2,#news3{
+	display:none;
+}
+#news > h4{
+	margin-left:30px;
+	color:#000;
+}
+#news ul{
+	margin-bottom:10px;
+}
+#news li{
+	padding:10px 0 0 30px; 
+	color:#000;
+}
+#news li span{
+	float:right;
+	color:#999;
+}
+		/*游戏下载*/
+#download div.down_l,div.down_r,#tips div.tips_l,div.tips_r{
+	float:left;
+	width:315px;
+	overflow:hidden;
+}
+#download img{
+	margin:15px 0 0 15px;
+}
+#download div.down{
+	float:left;
+	margin:15px 0 0 5px;;
+}
+#download div.down a{
+	display:block;
+	padding:15px 50px 15px 10px;
+	width:135px;
+	height:40px;
+	color:#000;
+	font-weight:bold;
+	background:#F2F2F3 url(../img/down.png) 150px center no-repeat;
+}
+#download div.down a:hover{
+	color:#fff;
+	background:#723eac url(../img/down.png) 150px center no-repeat;
+}
+#download ul,#tips ul{
+	float:left;
+	margin:15px 0 0 15px;
+}
+#download li:first-child,#tips li:first-child{
+	color:#000;
+	font-weight:bold;
+}
+#download li,#tips li{
+	margin-bottom:7px;
+}
+		/*游戏截图*/
+#pic .big_pic img{
+	margin:15px;
+	width:625px;
+	height:325px;
+}
+#pic .small_pic{
+	margin-bottom:15px;
+	text-align:center;
+} 
+#pic .small_pic img{
+	margin-left:10px;
+	width:120px;
+	height:62px;
+}
+#pic .small_pic img:hover{
+	cursor:pointer;
+}
+		/*游戏配置*/
+table{
+	margin:10px 0 15px 15px;
+	font-size:12px;
+	border-collapse:collapse;
+	border-bottom:1px solid #ddd;
+}
+th{
+	color:#000;
+	padding-bottom:5px;
+}
+td{
+	padding:8px;
+	border-top:1px solid #ddd;
+	border-right:1px solid #ddd;
+}
+td:last-child{
+	border-right:0;
+}
+		/*游戏攻略*/
+#tips dl{
+	float:left;
+	margin:10px 0 10px 5px;
+	width:158px;
+	text-align:center;
+}
+#tips dl img{
+	width:158px;
+	height:88px;
+}
+#tips dl:hover{
+	cursor:pointer;
+}
+#tips dl:hover a{
+	color:#723eac;
+}
+	/*网页主体右侧*/
+#right{
+	float:left;
+	margin-top:15px;
+	width:300px;
+}
+		/*生化危机6版本信息*/
+#re6{
+	border-radius:5px;
+	color:#c5c5c5;
+	background:#222;
+}
+#re6 .detail{
+	padding:15px;
+}
+#re6 h3{
+	margin-bottom:5px;
+	color:#fff;
+}
+#re6 .detail img{
+	float:left;
+	margin-top:15px;
+	cursor:pointer;
+}
+#re6 ul{
+	margin:15px 0 0 10px;
+	font-size:12px;
+}
+#re6 li{
+	margin-top:5px;
+}
+#re6 div.myScore{
+	padding-left:30px;
+	line-height:30px;
+	background:#E23703;
+}
+#re6 div.score{
+	padding:15px 30px;
+	background:#4A4A4A;
+}
+#re6 div.score > div{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+	background:#fff;
+    cursor: pointer;
+}
+#re6 div.score > span{
+	display: inline-block;
+	padding:0 0 5px 10px;
+	font-size:20px;
+	color:#ff5400;
+}
+#re6 div.intr{
+	padding:15px;
+}
+#re6 div.intr img{
+	margin-top:15px;
+}
+		/*生化危机系列游戏版本信息*/
+#others{
+	overflow:hidden;
+}
+#others p{
+	margin-top:15px;
+	padding:10px;
+	color:#fff;
+	border-radius:5px;
+	background:#723eac;
+}
+#others dl{
+	float:left;
+	position:relative;
+	margin-top:10px;
+	width:150px;
+	text-align:center;
+	cursor:pointer;
+}
+#others dd img{
+	width:120px;
+	height:168px;
+}
+#others dt{
+	position:absolute;
+	bottom:0;
+	left:15px;
+	width:120px;
+	font-size:12px;
+}
+#others dt a{
+	color:#fff;
+}
+/*网页底部*/
+#foot{
+	padding:25px 0;
+	color:#777;
+	text-align:center;
+	background:#393939;
+}
+#foot a{
+	color:#777;
+}
+#foot a:hover{
+	color:#fff;
+}
+/*****************************************************莫泰登录框*********************************************/
+.modal{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0, .7);
+    z-index: 999;
+    display: none;
+}
+.modal-dialog {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin:auto;
+    padding:40px;
+    width:300px;
+    height:350px;
+    border-radius: 12px;
+    background-color: #fff;
+}
+.close{
+    position: absolute;
+    top:5px;
+    right:5px;
+    font-size: 30px;
+}
+.close:hover{
+    cursor: pointer;
+}
+.modal-dialog h3{
+    text-align: center;
+    color: #E23703;
+    font-weight: normal;
+}
+.modal-dialog>input{
+    margin-top: 15px;
+    padding:4px 2px 4px 26px;
+    height:27px;
+    width:270px;
+    border: 1px solid #ddd;
+}
+#user{
+    background: url(../img/ico.png) 4px 0 no-repeat;;
+}
+#pwd{
+    background: url(../img/ico.png) 4px -35px no-repeat;
+}
+.modal-dialog p{
+    margin-top: 15px;
+}
+.modal-dialog a:hover{
+    color:#ff5400;
+    cursor: pointer;
+}
+.modal-dialog button{
+    margin-top: 15px;
+    width:300px;
+    line-height:35px;
+    text-align: center;
+    border:0;
+    color: #fff;
+    background: #E23703;
+    border-radius: 5px;
+}
+.modal-dialog button:hover{
+    background: #ff5400;
+    cursor: pointer;
+}
+.register{
+    color: #1481C2;
+}
+.modal-dialog div{
+    margin-top: 15px;
+}
+.modal-dialog i{
+    width:100px;
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
+}
+.modal-dialog span{
+    margin:0 8px 0 8px;
+}
+.modal-dialog s{
+    width:45px;
+    height:45px;
+    margin:0 27px 0 27px;
+}
+.bg1{
+    background: url(../img/user/qtlgn.png) 0 0 no-repeat;
+}
+.bg2{
+    background: url(../img/user/qtlgn.png) 0 -45px no-repeat;
+}
+.bg3{
+    background: url(../img/user/qtlgn.png) 0 -90px no-repeat;
+}
+/*********************************************右下角导航栏菜单************************************************/
+#navList{
+    position: fixed;
+    bottom:5%;
+    right:5%;
+    display: none;
+}
+#navList li{
+    margin-top: 10px;
+    width:50px;
+    height:50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #fff;
+}
+#navList li a{
+    padding:10px;
+}
+#navList li:hover{
+    background-color: #723eac;
+}
+#navList li:hover a{
+    color: #fff;
+}

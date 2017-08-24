@@ -1,0 +1,38 @@
+/*页面公共样式*/
+body{
+	padding:0;
+	margin:0;
+	font:14px "微软雅黑",Arial;
+	color:#666;
+}
+ul,li,h1,h2,h3,h4,h5,h6,dl,dt,dd,p{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+input{
+	border:none;
+	outline:0;
+}
+img{
+	vertical-align:bottom;
+}
+.lf{
+	float:left;
+}
+.rt{
+	float:right;
+}
+.clear{
+	clear:both;
+}
+.overflow{
+	overflow:hidden;
+}
+a{
+	color:#666;
+	text-decoration:none;
+}
+a:hover{
+	color:#723eac;
+}
